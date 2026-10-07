@@ -1,40 +1,58 @@
-# Contributing
+# Contributing to Genairosity
 
-This repository is a reference scaffold. Changes should improve conventions that apply across many projects without turning the repo into a product-specific app.
+Anyone may suggest software, contribute research, improve the hub, or submit a PR.
+You can work manually or use any locally initiated coding harness. No particular
+model, subscription, operating system, or AI tool is required for participation.
 
-## Principles
+## Suggest and investigate
 
-- Prefer small, composable defaults over large generated frameworks.
-- Keep root files broadly useful.
-- Put language/runtime conventions in `stacks/` and team-specific, platform-specific, or workflow-heavy choices in `extras/`.
-- Preserve supply-chain cooldowns and committed lockfiles.
-- Update agent-facing guidance when conventions change.
+Open a [nomination](https://github.com/508-dev/genairosity/issues/new?template=nomination.yml).
+Describe the user and specific workflow, why it matters, known FOSS options, and
+sources. Unknowns are welcome: mark them as unknown rather than inventing evidence.
+Read existing nominations before opening a duplicate.
 
-## Local Checks
+Research must assess existing FOSS projects before proposing another implementation.
+An upstream contribution can be the best outcome. Selection is research-informed
+and currently driven by the founding maintainer's interest and available time;
+profitability is not required. See [governance](docs/governance.md).
 
-Run the narrowest relevant checks while iterating:
+## Work a ticket
 
-```bash
-./scripts/lint.sh
-./scripts/typecheck.sh
-./scripts/test.sh
-```
+1. Pick an open issue in the repository that owns the work. Read its dependencies,
+   acceptance criteria, and referenced policy. Ask for clarification if it is not actionable.
+2. Comment that you intend to work on it and describe a bounded approach. Maintainers
+   assign when possible. A claim is coordination, not an exclusive lock; check recent activity.
+3. Fork/clone and create a branch. If using an agent, start it locally and give it the
+   issue URL, `AGENTS.md`, and the allowed scope. You control its permissions and costs.
+4. Implement or research within scope. Keep source provenance. Research tickets can
+   deliver documents; application implementation requires an approved specification.
+5. Run the relevant checks and open a PR linking the issue. Include what changed,
+   verification evidence, remaining limitations, and source/license information.
+6. A maintainer reviews and merges. Update status records explicitly when warranted.
 
-Before opening or updating a PR, run:
+Use `gh issue view NUMBER --repo OWNER/REPO` to read work from a terminal. `gh pr create`
+can submit a PR from any harness; GitHub's web interface works equally well. Never
+copy access tokens or proprietary materials into prompts, issues, logs, or commits.
 
-```bash
-./scripts/check-all.sh
-```
+## Ticket contract
 
-## Pull Requests
+Actionable work needs an objective, prerequisites/dependencies, bounded scope and
+exclusions, acceptance criteria, and a verification method. The work issue form
+captures these. A checklist is not evidence: attach the actual findings or check results.
+If blocked, leave a concise explanation and next action instead of claiming completion.
 
-Use the PR template. Include what changed, why it belongs in the devkit, and how it was validated.
+## Hub development
 
-Avoid committing local state such as `.venv`, `node_modules`, caches, raw logs, screenshots, and `.context/artifacts/`.
+See [development](docs/development.md). Run `./scripts/check-all.sh` before a PR.
+Project registration has an additional [review checklist](docs/project-setup.md).
+Changes to `devkit/template` must pass initializer and conformance tests.
 
-## Agent Notes
+## Research and licensing
 
-- Keep convention changes paired with docs and skill updates.
-- Do not turn stack examples into root defaults without explaining why the
-  convention applies across most projects.
-- Validate both the root template and any stack touched by the change.
+Follow [the clean-room process](docs/clean-room.md). Submit only material you may
+license under the applicable repository license; preserve upstream notices.
+No contributor license assignment is required. Original hub contributions are
+AGPL-3.0-or-later unless a file carries an applicable inherited license notice.
+
+Keep discussion respectful and specific. Maintainers may close duplicates, decline
+out-of-scope work, or moderate harassment. Report vulnerabilities through [SECURITY.md](SECURITY.md).

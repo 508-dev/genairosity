@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contribution guide
+    url: https://github.com/508-dev/genairosity/blob/main/CONTRIBUTING.md
+    about: How to suggest, investigate, and work a ticket.
+  - name: Private security report
+    url: https://github.com/508-dev/genairosity/security/advisories/new
+    about: Keep sensitive vulnerability details out of public issues.

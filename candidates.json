@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "candidates": [
+    {
+      "id": "capcut",
+      "name": "CapCut",
+      "category": "Video & creation",
+      "summary": "Investigate a polished editing workflow for short-form video creators.",
+      "question": "Which everyday editing, captioning, and export workflow could a FOSS tool make effortless?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/4"
+    },
+    {
+      "id": "offline-coding-agent",
+      "name": "Offline coding agent",
+      "category": "Developer tools",
+      "summary": "Investigate local code intelligence and an offline-first coding workflow.",
+      "question": "What gaps remain in existing FOSS agents and repository indexes, and can we contribute upstream?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/5"
+    },
+    {
+      "id": "bluebeam-revu",
+      "name": "Bluebeam Revu",
+      "category": "Architecture & construction",
+      "summary": "Investigate PDF markup, measurement, and drawing-set workflows.",
+      "question": "Which construction-specific workflow is underserved by existing FOSS PDF tools?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/6"
+    },
+    {
+      "id": "labview",
+      "name": "LabVIEW",
+      "category": "Science & instrumentation",
+      "summary": "Investigate visual programming for instrumentation and measurement.",
+      "question": "Which instruments, protocols, and bounded laboratory workflow should research start with?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/7"
+    },
+    {
+      "id": "filemaker",
+      "name": "FileMaker",
+      "category": "Data & migration",
+      "summary": "Investigate a path out of long-lived proprietary database applications.",
+      "question": "What would a practical migration of data, relationships, layouts, and business rules require?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/8"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+name: Suggest software to investigate
+description: Propose a useful workflow and share what you know. Unknowns are welcome.
+title: 'Investigate: '
+labels: ['nomination', 'nomination:proposed']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A nomination opens a conversation. It does not start model work or commit to implementation.
+        Review existing issues and the contribution guide before submitting. Do not upload proprietary material.
+  - type: input
+    id: reference
+    attributes:
+      label: Reference software or workflow
+      description: Name the software or the workflow you want to investigate.
+    validations:
+      required: true
+  - type: textarea
+    id: users
+    attributes:
+      label: Who needs this, and what are they trying to do?
+      description: Describe a specific workflow and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Existing FOSS and upstream opportunities
+      description: Link related projects and known gaps, or say what still needs research.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources and research questions
+      description: Public documentation, lawful observations, scope ideas, and uncertainties. Link sources; do not copy proprietary assets or code.
+    validations:
+      required: true
+  - type: textarea
+    id: interest
+    attributes:
+      label: Your interest and possible contribution
+      description: Research, design, domain knowledge, manual development, or optional locally initiated AI assistance.

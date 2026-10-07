@@ -1,0 +1,52 @@
+name: Bounded work ticket
+description: Define research, design, documentation, or implementation work with verifiable acceptance.
+title: 'Work: '
+labels: ['work']
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Work type
+      options: [Research, Specification, Design, Implementation, Documentation, Verification]
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What useful outcome should this task produce?
+    validations:
+      required: true
+  - type: textarea
+    id: prerequisites
+    attributes:
+      label: Prerequisites and dependencies
+      description: Link blocking issues, approved scope/specification, and allowed evidence. Say none if there are none.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and exclusions
+      description: Define a bounded slice and what it must not expand into.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Describe observable outcomes that a reviewer can assess.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification method
+      description: Commands, reproducible observations, or document review evidence. Model self-assessment alone is not verification.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Comment before starting to coordinate. Work manually or start your chosen harness locally.
+        Bring a PR with actual evidence. Implementation requires a maintainer-approved specification.

@@ -1,63 +1,49 @@
-# Deployment
+# GitHub Pages publishing
 
-508 Devkit does not choose a deployment platform by default. Pick the smallest deployment shape that matches the product, team, and operational constraints.
+Production: https://508-dev.github.io/genairosity/
 
-## Decision Record
+The `Checks and Pages` GitHub Actions workflow checks every pull request. Pushes to
+`main` and manual dispatches from `main` run the same checks, build the static site,
+and deploy the Pages artifact. Only the deployment job has Pages write/OIDC access.
+No model calls, provider credentials, or application server are involved.
 
-When applying this devkit to a project, record the deployment decision here:
+## Initial setup (maintainer)
 
-- Target platform:
-- Services deployed:
-- Database and storage:
-- Secrets management:
-- Preview environment strategy:
-- Rollback strategy:
-- Production health checks:
+Review `scripts/github-setup.ts`, then run:
 
-## Common Options
+```sh
+bun run github:setup
+bun run github:setup -- --apply
+```
 
-| Option | Good Fit | Tradeoffs |
-| --- | --- | --- |
-| Fly.io | Small teams that want simple app hosting close to users. | Requires platform-specific config and operational familiarity. |
-| Render | Straightforward web services, workers, and managed databases. | Less control than lower-level infrastructure. |
-| Vercel or Cloudflare Pages | Frontend-first apps and edge-friendly web surfaces. | Backend, worker, and database workflows may need separate hosting. |
-| Kamal | Teams that want Docker deploys to owned servers. | Requires server operations, registry setup, and rollback discipline. |
-| Coolify | Self-hosted platform-style deploys. | Adds a platform to operate and upgrade. |
-| Kubernetes | Larger teams with existing cluster operations. | Too much machinery for most new projects. |
+The first command previews the exact labels and nomination bodies. `--apply` creates
+or updates the known labels and creates missing initial nomination issues, then writes
+their URLs into `candidates.json`. It matches candidates by a stable body marker and
+checks for duplicates. It does not alter existing nomination decisions or issue bodies.
+The script requires authenticated `gh` with access to this public repository.
 
-## Mobile Store Publishing
+Enable Pages with GitHub Actions as the build source in Settings → Pages. The
+maintainer can equivalently use:
 
-Native mobile apps aren't a deployment-platform decision at all — there's no
-server to host. If the target project selects `stacks/android`, use its
-release pipeline instead of anything in this file: `version.txt` +
-release-please decide the version, a release-PR merge is what ships it, and
-CI publishes signed builds to GitHub Releases, Google Play (internal track),
-and F-Droid (a self-hosted repo plus an optional f-droid.org submission). See
-`stacks/android/README.md` for the full model, including why the two jobs
-live in one workflow run and how signing keys are handled.
+```sh
+gh api --method POST repos/508-dev/genairosity/pages -f build_type=workflow
+```
 
-The target repo's own `docs/deployment.md` should be rewritten to describe
-that concrete pipeline rather than keeping this file's generic
-platform-decision-record shape — see `stacks/android/README.md` → "Docs To
-Write In The Target Repo".
+If Pages already exists, inspect it first and use its current configuration; do not
+create a competing source. Commit the candidate URLs and push the validated changes
+to `main`. Review Actions and the deployment URL. Repository or organization settings
+may require approving Actions or the `github-pages` environment before deployment.
+Enable private vulnerability reporting in Settings → Security for the SECURITY.md link.
 
-## Workflow Guidance
+## Updates and rollback
 
-Keep deployment workflows platform-specific and explicit. A project should add deploy CI only after the platform is chosen and secrets are configured.
+Registry, prose, and code changes publish after merge and successful checks. A failed
+build leaves the previous deployed artifact live. Revert the offending commit through
+a reviewed change and let Pages rebuild to roll back. Do not edit generated output.
+Changing a project status requires a registry PR, not an issue label alone.
 
-Before enabling automatic production deploys:
+## Publication verification
 
-1. Add a health endpoint or smoke test.
-2. Document required environment variables.
-3. Confirm rollback behavior.
-4. Keep preview deploys separate from production deploys.
-5. Use least-privilege deployment credentials.
-
-## Agent Notes
-
-- Do not infer a deployment platform from this devkit. Inspect the target repo,
-  hosting account, and team preference first.
-- Keep deployment workflows out of new repos until secrets and rollback are
-  known.
-- If deployment is undecided, leave the decision record blank rather than
-  copying placeholder platform files.
+Confirm the workflow succeeds, the public homepage and contribution page return 200,
+styles/assets load under the repository prefix, and the five candidate links point
+to real nomination issues. Check the site on desktop and a narrow viewport.

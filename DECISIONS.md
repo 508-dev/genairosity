@@ -1,85 +1,45 @@
-# 508 Devkit Decisions
+# Confirmed project decisions
 
-Last reviewed: 2026-06-03
+Agreed with the founding maintainer on 2026-10-07. This supersedes template-era
+policies and resolves ambiguities in the original `genairosity.md` proposal.
 
-This is the constitution for the devkit. Use it as the decision authority; use files in this repo as examples or frozen primitives according to the decision below.
+1. **Establishment precedes a pilot.** Deliver a public Pages site, contribution
+   process/pipeline, and reusable universal project devkit. Application work comes later.
+2. **Human authority.** The founding maintainer selects targets and activates projects
+   by merging a conforming repository link into the canonical registry.
+3. **Local model work only.** A human starts every token-costing action locally using
+   their chosen harness/model. Human-only development is equally welcome. GitHub
+   automation runs ordinary validation and publishing, never model programming.
+4. **Canonical records.** `projects.json` owns membership and project status; Markdown
+   owns detail; hub issues own nominations; project issues own implementation tasks.
+   The wiki and GitHub Projects are not additional status authorities.
+5. **Open participation.** Anyone can nominate or contribute; acceptance, specification
+   approval, registration, and policy exceptions require maintainer decisions.
+6. **Mission, not revenue.** Build/generation cost need not be recouped. Non-commercial
+   describes our motivation, not restrictions on downstream commercial freedoms.
+7. **Selection by research and interest.** Existing FOSS, user workflows, feasibility,
+   provenance, and scope inform decisions. Available time and interest decide initial priorities.
+8. **Small project baseline.** A local initializer copies a versioned, stack-neutral
+   devkit into a new directory. No automatic synchronization, repository creation,
+   agent execution, or implicit registration occurs.
+9. **Portable work contracts.** Tickets identify prerequisites, scope, acceptance, and
+   verification; PRs link work and report evidence. The Overseer is a locally invoked role.
+10. **Research boundary.** Public documentation and lawfully observed behavior inform
+    traceable specifications. Implementers use an approved spec in separate contexts.
+    Proprietary source/assets, decompilation, and circumvention are excluded from this
+    initial process. Ambiguous evidence requires review.
+11. **FOSS default.** New project code defaults to AGPL-3.0-or-later. A documented
+    maintainer decision can approve another FOSS license. Preserve inherited licenses.
+12. **Performance and usability.** Rust preferred where suitable; Linux-first desktop
+    support and Android-first mobile support where applicable. Useful, approachable
+    workflows matter. Server components must be FOSS and self-hostable. AI features
+    should allow configurable APIs and local endpoints.
+13. **Initial candidates.** CapCut, offline coding agent, Bluebeam Revu, LabVIEW, and
+    FileMaker are unranked investigations, not implementation announcements.
+14. **Ownership.** Founding projects normally live under `508-dev`; explicitly approved
+    external repositories can register under the same requirements.
+15. **Routine implementation.** Maintainer delegates ordinary tooling/layout/test details
+    within these constraints. A small Bun build emits static HTML/CSS for GitHub Pages.
 
-## Apply The Gold/Filler Test
-
-Decision: keep and test files that agents would not reliably reproduce correctly without this repo. Treat ordinary app code as disposable examples.
-
-Why: agents can generate plausible FastAPI handlers, workers, and frontend apps. They are less reliable at reproducing devkit-specific topology, safety policy, worktree behavior, and operational memory conventions.
-
-Deviate when: a real target repo needs product code. Generate it for that repo instead of copying placeholder app code from the devkit.
-
-## Dependency Cooldowns
-
-Decision: use dependency cooldowns in every package manager that supports them.
-
-Why: new package versions are a supply-chain risk window. The exact cooldowns are non-obvious and should converge across repos.
-
-Deviate when: a security fix or production incident requires an immediate update. Document the exception in the PR.
-
-## Locked Installs
-
-Decision: commit lockfiles and use frozen or locked installs in CI.
-
-Why: agents and humans need reproducible dependency resolution.
-
-Deviate when: a repo is intentionally a library template without a runnable dependency graph. Document why no lockfile is committed.
-
-## Bun First, pnpm First-Class
-
-Decision: show Bun first for JavaScript workspaces while keeping pnpm first-class for teams, repos, or large workspaces that prefer pnpm-specific monorepo behavior.
-
-Why: Bun is fast and simple for greenfield repos, and the author prefers it. That preference should not imply pnpm is second-class or wrong for new projects.
-
-Deviate when: the target repo already uses pnpm, npm, Yarn, or another package manager for a clear reason. Do not churn package managers during unrelated work.
-
-## Frontend Framework Neutrality
-
-Decision: do not choose Next.js, Vite, TanStack Start, Astro, Expo, or any other frontend framework in root defaults.
-
-Why: frontend framework choice depends on product shape, deployment target, routing, rendering model, and team familiarity.
-
-Deviate when: the target repo has already chosen a framework or the user explicitly asks for one.
-
-## Host Apps, Compose Infra
-
-Decision: run app processes on the host and infrastructure through Docker Compose during local development.
-
-Why: host app processes are easier for agents to inspect and faster for reload loops. Compose still provides concrete examples for local infrastructure such as databases and caches.
-
-Deviate when: deployment parity, binary dependencies, or team policy require full-container development. Put that in docs and scripts explicitly.
-
-## Deterministic Worktree Ports
-
-Decision: derive local ports from the absolute worktree path.
-
-Why: sibling worktrees should run concurrently without hand-editing `.env` files.
-
-Deviate when: a platform assigns ports dynamically. Preserve the script for local development unless it is truly irrelevant.
-
-## `.context/` Workspace Memory
-
-Decision: keep `.context/` gitignored as workspace-local operational memory for humans and agents. Do not ship it as tracked template content.
-
-Why: architecture notes, decisions, failures, runbooks, and summaries prevent repeated failed approaches and preserve local reasoning.
-
-Deviate when: information is durable, user-facing, or contributor-facing. Put that in README, docs, or official project documentation instead.
-
-## GitHub Hygiene
-
-Decision: include small issue/PR templates, least-privilege workflows, pinned action SHAs, and Renovate cooldown policy. Keep Gitleaks and Dependency Review as opt-in extras: Gitleaks can create noisy baseline findings, and Dependency Review depends on GitHub's dependency graph and is primarily vulnerability/license/change reporting rather than active supply-chain attack detection.
-
-Why: collaboration and security hygiene are broadly useful and easy to drift across repos.
-
-Deviate when: a repo does not use GitHub or has a stronger existing platform policy.
-
-## Currency
-
-Decision: the devkit owns topology and policy, not permanent version freshness.
-
-Why: frozen files age. Agents should preserve the repo's decisions while verifying current tool versions, action SHAs, and API docs when applying the devkit to a target repo.
-
-Deviate when: working fully offline. In that case, copy the known-good pinned versions and document that currency was not verified.
+No warranty is provided. Independent process records are evidence of the process,
+not a promise of target-specific legal clearance or model-training independence.
