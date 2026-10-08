@@ -15,6 +15,13 @@ These instructions apply to every harness. Human-only contributions are welcome.
   licenses, or register repositories. Propose the change in an issue or PR for review.
 - A pilot and application implementation are outside this hub's establishment scope.
 - Preserve the human's changes and the original `genairosity.md` proposal.
+- For delegated research, draft findings in the agent session or ignored local
+  scratch. Have the Overseer review sources and scope before posting findings to
+  a GitHub issue. A coordination claim may be posted before research starts.
+- In GitHub issue bodies and comments, put every GitHub issue URL or shorthand
+  reference in inline code (for example, `https://github.com/owner/repo/issues/123`
+  or `owner/repo#123`). Do not make it a Markdown link. This avoids creating
+  unwanted cross-references on other projects' issues.
 
 ## Layout and work
 

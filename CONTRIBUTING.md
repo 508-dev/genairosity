@@ -16,6 +16,20 @@ An upstream contribution can be the best outcome. Selection is research-informed
 and currently driven by the founding maintainer's interest and available time;
 profitability is not required. See [governance](docs/governance.md).
 
+For agent-assisted research, keep substantive findings in a draft in the agent
+session or ignored local scratch. The Overseer checks source links, dates, terms,
+claims about existing features, and project scope; the researcher revises the draft
+before a reviewed summary is posted to the issue. A short coordination claim can
+still be posted before starting. Review of a draft authorizes publication of those
+findings, not nomination acceptance or specification approval. See the
+[Overseer workflow](docs/overseer.md).
+
+In any GitHub issue body or comment, wrap GitHub issue URLs and shorthand references
+in inline code, such as `https://github.com/owner/repo/issues/123`, `owner/repo#123`,
+or `#123`. Do not make them active Markdown links; cross-references can create
+backlinks and notifications on other projects. Keep links to ordinary source
+documentation clickable.
+
 ## Work a ticket
 
 1. Pick an open issue in the repository that owns the work. Read its dependencies,

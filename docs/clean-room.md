@@ -14,6 +14,11 @@ observed fact, and what it supports. Public availability is not itself permissio
 to copy. Prefer links and original descriptions; retain only evidence you may retain.
 Use synthetic data and your own test files for observations.
 
+When publishing in a GitHub issue, format GitHub issue URLs and shorthand issue
+references as inline code rather than active links to avoid unwanted backlinks.
+Links to ordinary public documentation and source repositories remain useful
+provenance.
+
 Do not use leaked or proprietary source, unlicensed proprietary blobs/assets, NDA
 material, decompilation, circumvention, or access you are not authorized to exercise.
 Do not upload uncertain material to an issue, model provider, or git. Record a brief

@@ -26,14 +26,14 @@ body:
     id: alternatives
     attributes:
       label: Existing FOSS and upstream opportunities
-      description: Link related projects and known gaps, or say what still needs research.
+      description: Link related projects and known gaps, or say what still needs research. Put any GitHub issue URL or shorthand reference in inline code (backticks), not an active link.
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
       label: Sources and research questions
-      description: Public documentation, lawful observations, scope ideas, and uncertainties. Link sources; do not copy proprietary assets or code.
+      description: Public documentation, lawful observations, scope ideas, and uncertainties. Link source docs; put GitHub issue references in inline code. Do not copy proprietary assets or code.
     validations:
       required: true
   - type: textarea

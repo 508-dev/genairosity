@@ -21,7 +21,7 @@ body:
     id: prerequisites
     attributes:
       label: Prerequisites and dependencies
-      description: Link blocking issues, approved scope/specification, and allowed evidence. Say none if there are none.
+      description: Name blocking issues, approved scope/specification, and allowed evidence. Wrap GitHub issue URLs or shorthand references in inline code (backticks), not active links. Say none if there are none.
     validations:
       required: true
   - type: textarea
