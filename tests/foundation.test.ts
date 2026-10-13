@@ -146,7 +146,7 @@ describe("static publishing", () => {
     const result = await build(root, "/genairosity", output);
     expect(result.pages).toContain("contribute/index.html");
     const home = readFileSync(join(output, "index.html"), "utf8");
-    expect(home).toContain("No projects are registered yet");
+    expect(home).toContain("librequilt");
     expect(home).toContain("CapCut");
     expect(home).toContain("FileMaker");
     expect(home).not.toContain("{{");
