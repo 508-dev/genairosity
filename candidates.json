@@ -2,20 +2,20 @@
   "schemaVersion": 1,
   "candidates": [
     {
-      "id": "capcut",
-      "name": "CapCut",
-      "category": "Video & creation",
-      "summary": "Investigate a polished editing workflow for short-form video creators.",
-      "question": "Which everyday editing, captioning, and export workflow could a FOSS tool make effortless?",
-      "issueUrl": "https://github.com/508-dev/genairosity/issues/4"
+      "id": "theatre-lighting-paperwork",
+      "name": "Theatre lighting paperwork",
+      "category": "Live performance",
+      "summary": "Investigate instrument schedules, channel hookups and printed paperwork for lighting designers and electricians.",
+      "question": "Does any free tool already cover this well enough, and can open fixture formats bootstrap a new one?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/74"
     },
     {
-      "id": "offline-coding-agent",
-      "name": "Offline coding agent",
-      "category": "Developer tools",
-      "summary": "Investigate local code intelligence and an offline-first coding workflow.",
-      "question": "What gaps remain in existing FOSS agents and repository indexes, and can we contribute upstream?",
-      "issueUrl": "https://github.com/508-dev/genairosity/issues/5"
+      "id": "nutrition-labels",
+      "name": "Nutrition labels for small food producers",
+      "category": "Food & farming",
+      "summary": "Investigate turning a recipe into a compliant nutrition panel, ingredient statement and allergen list.",
+      "question": "Which small producers actually need a label, and what does the compliance step require beyond existing free tools?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/75"
     },
     {
       "id": "bluebeam-revu",
@@ -34,12 +34,20 @@
       "issueUrl": "https://github.com/508-dev/genairosity/issues/7"
     },
     {
-      "id": "filemaker",
-      "name": "FileMaker",
-      "category": "Data & migration",
-      "summary": "Investigate a path out of long-lived proprietary database applications.",
-      "question": "What would a practical migration of data, relationships, layouts, and business rules require?",
-      "issueUrl": "https://github.com/508-dev/genairosity/issues/8"
+      "id": "panel-furniture-order-splitting",
+      "name": "Panel-furniture order splitting",
+      "category": "Workshops & fabrication",
+      "summary": "Investigate turning a cabinet order into board lists, drilling data and sheet layouts for small furniture factories.",
+      "question": "What do small factories need from this step, and which rules and machine formats are publicly documented?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/36"
+    },
+    {
+      "id": "savings-group-ledger",
+      "name": "Savings-group ledger",
+      "category": "Livelihoods",
+      "summary": "Investigate meeting-by-meeting records and share-out for village savings groups, chamas and tontines.",
+      "question": "What would a group's own record-keeper need on a low-end phone, offline, in a local language?",
+      "issueUrl": "https://github.com/508-dev/genairosity/issues/82"
     }
   ]
 }

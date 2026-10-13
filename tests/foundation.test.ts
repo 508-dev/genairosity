@@ -147,8 +147,8 @@ describe("static publishing", () => {
     expect(result.pages).toContain("contribute/index.html");
     const home = readFileSync(join(output, "index.html"), "utf8");
     expect(home).toContain("librequilt");
-    expect(home).toContain("CapCut");
-    expect(home).toContain("FileMaker");
+    expect(home).toContain("Theatre lighting paperwork");
+    expect(home).toContain("Savings-group ledger");
     expect(home).not.toContain("{{");
     for (const page of result.pages) {
       const html = readFileSync(join(output, page), "utf8");
