@@ -1,4 +1,38 @@
 {
   "schemaVersion": 1,
-  "projects": []
+  "projects": [
+    {
+      "id": "librebrewreports",
+      "name": "librebrewreports",
+      "summary": "Research into production records and federal operations and excise reporting for small breweries, starting with beer.",
+      "repository": "https://github.com/508-dev/librebrewreports",
+      "status": "research",
+      "license": "AGPL-3.0-or-later",
+      "maintainer": "caleb@508.dev",
+      "nominationUrl": "https://github.com/508-dev/genairosity/issues/77",
+      "updated": "2026-10-13"
+    },
+    {
+      "id": "librefuneralhome",
+      "name": "librefuneralhome",
+      "summary": "Research into case management and legally required price-list documents for independent funeral homes.",
+      "repository": "https://github.com/508-dev/librefuneralhome",
+      "status": "research",
+      "license": "AGPL-3.0-or-later",
+      "maintainer": "caleb@508.dev",
+      "nominationUrl": "https://github.com/508-dev/genairosity/issues/50",
+      "updated": "2026-10-13"
+    },
+    {
+      "id": "librequilt",
+      "name": "librequilt",
+      "summary": "Research into quilt design software: block drawing, quilt layout, and yardage and cutting charts.",
+      "repository": "https://github.com/508-dev/librequilt",
+      "status": "research",
+      "license": "AGPL-3.0-or-later",
+      "maintainer": "caleb@508.dev",
+      "nominationUrl": "https://github.com/508-dev/genairosity/issues/71",
+      "updated": "2026-10-13"
+    }
+  ]
 }
