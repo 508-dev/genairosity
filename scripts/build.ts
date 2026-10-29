@@ -61,6 +61,15 @@ function projectCard(project: Project, base: string): string {
 }
 export async function build(root: string, prefix = "", output = join(root, "dist")) {
   const base = basePath(prefix);
+  const domain = (
+    await Bun.file(join(root, "site", "CNAME"))
+      .text()
+      .catch(() => "")
+  ).trim();
+  if (domain !== "" && base !== "")
+    throw new Error(
+      `site/CNAME serves ${domain} at the domain root; SITE_BASE_PATH must be empty, not ${base}`,
+    );
   const { projects, candidates } = loadData(root);
   let home = await readFile(join(root, "site/home.html"), "utf8");
   const replacements: Record<string, string> = {
@@ -124,6 +133,7 @@ export async function build(root: string, prefix = "", output = join(root, "dist
   for (const name of ["style.css", "mark.svg", "freedom.svg"])
     await cp(join(root, "site", name), join(output, "assets", name));
   await Bun.write(join(output, ".nojekyll"), "");
+  if (domain !== "") await Bun.write(join(output, "CNAME"), `${domain}\n`);
   return {
     output,
     pages: Object.keys(pages),

@@ -141,10 +141,11 @@ describe("static publishing", () => {
     for (const path of ["//evil.test", "/../other", 'x"bad', "/with space"])
       expect(() => basePath(path)).toThrow();
   });
-  test("builds the launch under a repository subpath with valid local targets", async () => {
+  test("builds the launch at the custom domain root with valid local targets", async () => {
     const output = join(scratch, "site");
-    const result = await build(root, "/genairosity", output);
+    const result = await build(root, "", output);
     expect(result.pages).toContain("contribute/index.html");
+    expect(readFileSync(join(output, "CNAME"), "utf8").trim()).toBe("genairosity.com");
     const home = readFileSync(join(output, "index.html"), "utf8");
     expect(home).toContain("librequilt");
     expect(home).toContain("Theatre lighting paperwork");
@@ -152,8 +153,8 @@ describe("static publishing", () => {
     expect(home).not.toContain("{{");
     for (const page of result.pages) {
       const html = readFileSync(join(output, page), "utf8");
-      for (const match of html.matchAll(/(?:href|src)="(\/genairosity\/[^"#]*)(?:#[^"]*)?"/g)) {
-        const target = (match[1] ?? "").slice("/genairosity/".length);
+      for (const match of html.matchAll(/(?:href|src)="(\/[^/"#][^"#]*)?(?:#[^"]*)?"/g)) {
+        const target = (match[1] ?? "").slice(1);
         expect(
           existsSync(
             join(output, target === "" || target.endsWith("/") ? `${target}index.html` : target),
@@ -162,10 +163,16 @@ describe("static publishing", () => {
       }
     }
   });
+  test("refuses a subpath prefix while a custom domain is declared", async () => {
+    expect(build(root, "/genairosity", join(scratch, "conflict"))).rejects.toThrow(
+      "genairosity.com",
+    );
+  });
   test("renders registered details and removes stale pages when membership changes", async () => {
     const fixture = join(scratch, "registered");
     mkdirSync(join(fixture, "content/projects"), { recursive: true });
     cpSync(join(root, "site"), join(fixture, "site"), { recursive: true });
+    rmSync(join(fixture, "site/CNAME"), { force: true });
     for (const name of ["contribute.md", "principles.md"])
       cpSync(join(root, "content", name), join(fixture, "content", name));
     writeFileSync(join(fixture, "projects.json"), JSON.stringify(registry()));

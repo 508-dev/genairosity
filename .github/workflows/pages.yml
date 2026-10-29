@@ -25,7 +25,7 @@ jobs:
         shell: bash
         run: |
           repo_name="${GITHUB_REPOSITORY#*/}"
-          if [[ "$repo_name" == *.github.io ]]; then
+          if [[ -f site/CNAME || "$repo_name" == *.github.io ]]; then
             echo 'SITE_BASE_PATH=' >> "$GITHUB_ENV"
           else
             echo "SITE_BASE_PATH=/$repo_name" >> "$GITHUB_ENV"

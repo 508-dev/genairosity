@@ -1,11 +1,25 @@
 # GitHub Pages publishing
 
-Production: https://508-dev.github.io/genairosity/
+Production: https://genairosity.com/
 
 The `Checks and Pages` GitHub Actions workflow checks every pull request. Pushes to
 `main` and manual dispatches from `main` run the same checks, build the static site,
 and deploy the Pages artifact. Only the deployment job has Pages write/OIDC access.
 No model calls, provider credentials, or application server are involved.
+
+## Custom domain and link prefix
+
+`site/CNAME` declares the custom domain and is the single source of truth for how
+links are written. While it exists, the site is served at the domain root: the
+workflow builds with an empty `SITE_BASE_PATH`, every generated link and asset URL is
+root-relative, and the build copies `CNAME` into the artifact so an Actions deployment
+does not drop the domain. The build refuses a non-empty `SITE_BASE_PATH` while a
+`CNAME` is present, because that combination publishes asset URLs that 404.
+
+Moving back to the `508-dev.github.io/genairosity/` project URL means deleting
+`site/CNAME`; the workflow then restores the `/genairosity` repository prefix on its
+own. Clearing the domain in Settings → Pages without deleting the file, or the
+reverse, breaks one of the two.
 
 ## Initial setup (maintainer)
 
@@ -45,5 +59,5 @@ Changing a project status requires a registry PR, not an issue label alone.
 ## Publication verification
 
 Confirm the workflow succeeds, the public homepage and contribution page return 200,
-styles/assets load under the repository prefix, and the five candidate links point
+styles/assets load at the domain root, and the five candidate links point
 to real nomination issues. Check the site on desktop and a narrow viewport.

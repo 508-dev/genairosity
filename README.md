@@ -11,7 +11,7 @@ We are mission-driven: a project does not need to recover its build or generatio
 cost. AI-assisted development is a practical option, never a participation requirement.
 Humans initiate any model work locally, with the tools and models they choose.
 
-- [Website](https://508-dev.github.io/genairosity/)
+- [Website](https://genairosity.com/)
 - [Suggest a target](https://github.com/508-dev/genairosity/issues/new?template=nomination.yml)
 - [Investigation shortlist](https://github.com/508-dev/genairosity/issues?q=is%3Aissue+label%3Anomination)
 - [Contribute](CONTRIBUTING.md) · [Establish a project](docs/project-setup.md)
