@@ -19,10 +19,14 @@ Pending research: record alternatives, gaps, and whether contributing upstream i
 
 ## Platforms, usability, and performance
 
-Pending scope decision: Linux-first desktop or Android-first mobile where applicable;
-choose other platforms and measurable targets based on the workflow. Rust is preferred
-where appropriate. Server components must be FOSS and self-hostable. AI features,
-if any, should support configurable providers and local endpoints.
+Pending scope decision: choose platforms and measurable targets based on the workflow.
+Web-native applications, including web-only software, are fully valid choices; native
+clients are not required. Linux-first applies when building desktop clients;
+Android-first applies when building mobile clients. Rust is preferred where appropriate,
+not mandatory, including for web projects. Document platform and stack tradeoffs;
+choosing another language or a web-only platform does not require a policy exception.
+Server components must be FOSS and self-hostable. AI features, if any, should support
+configurable providers and local endpoints.
 
 ## Ownership and mission
 
