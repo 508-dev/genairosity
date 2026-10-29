@@ -20,7 +20,12 @@ Document verification in docs/verification.md. Run python3 scripts/check-project
 and relevant checks before a PR. Report limitations honestly; structural success is
 not substantive approval. Keep secrets and .context/ out of git.
 
-Rust is preferred where it fits; stack choices require a documented reason. Keep
+Choose platforms and stacks for the workflow. Web-native applications, including
+web-only software, are fully valid choices; do not infer a requirement for native
+desktop or mobile clients. Rust is preferred where it fits, not mandatory, including
+for web projects. Linux-first applies when building desktop clients; Android-first
+applies when building mobile clients. Document platform and stack tradeoffs; choosing
+another language or a web-only platform does not require a policy exception. Keep
 FOSS licenses/notices, locked installs, and supported dependency cooldowns. Update
 README and verification commands when a stack is selected. Do not change hub
 membership or status except through an explicitly reviewed hub PR.

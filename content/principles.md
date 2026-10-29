@@ -23,8 +23,11 @@ A documented process is not a blanket legal guarantee. Doubtful inputs need revi
 ## Good enough for everyday life
 
 Performance, accessible design, and approachable workflows are core requirements.
-Rust is preferred where appropriate. Linux is a first-class desktop platform;
-Android is the mobile priority where applicable. Cross-platform support follows the scope.
+Web-native applications, including web-only software, are fully valid choices;
+native desktop or mobile clients are not required. Rust is preferred where appropriate,
+not mandatory, including for web projects. When building native clients, Linux is a
+first-class desktop platform and Android is the mobile priority. Platform and stack
+choices follow the workflow and scope.
 
 ## Build where the gap is
 

@@ -30,10 +30,14 @@ policies and resolves ambiguities in the original `genairosity.md` proposal.
     initial process. Ambiguous evidence requires review.
 11. **FOSS default.** New project code defaults to AGPL-3.0-or-later. A documented
     maintainer decision can approve another FOSS license. Preserve inherited licenses.
-12. **Performance and usability.** Rust preferred where suitable; Linux-first desktop
-    support and Android-first mobile support where applicable. Useful, approachable
-    workflows matter. Server components must be FOSS and self-hostable. AI features
-    should allow configurable APIs and local endpoints.
+12. **Performance and usability.** Choose platforms and stacks to suit the workflow.
+    Web-native applications, including web-only software, are fully valid choices;
+    native desktop or mobile clients are not required. Rust is preferred where
+    suitable, not mandatory, including for web projects. Linux-first applies when
+    building desktop clients; Android-first applies when building mobile clients.
+    These priorities do not require native clients for a web application. Useful,
+    approachable workflows matter. Server components must be FOSS and self-hostable.
+    AI features should allow configurable APIs and local endpoints.
 13. **Initial candidates.** CapCut, offline coding agent, Bluebeam Revu, LabVIEW, and
     FileMaker are unranked investigations, not implementation announcements.
 14. **Ownership.** Founding projects normally live under `508-dev`; explicitly approved

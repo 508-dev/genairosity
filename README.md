@@ -66,9 +66,11 @@ publication or registration. See [project setup](docs/project-setup.md).
 ## Principles and licensing
 
 Legal and independently implemented; FOSS throughout, including self-hostable
-server components; performant; accessible to ordinary users; Linux-first for
-cross-platform desktop software and Android-first for mobile where appropriate.
-Rust is preferred when it fits. Avoid duplicating strong existing FOSS efforts.
+server components; performant; accessible to ordinary users. Web-native applications,
+including web-only software, are fully valid choices; native clients are not required.
+Linux-first applies to desktop clients and Android-first to mobile clients, not as a
+requirement to build either. Rust is preferred when it fits, not mandatory, including
+for web projects. Avoid duplicating strong existing FOSS efforts.
 AI features, if any, should support configurable providers and local endpoints.
 
 Original hub code, documentation, and project starter: **AGPL-3.0-or-later**.

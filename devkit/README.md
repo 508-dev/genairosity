@@ -14,8 +14,13 @@ not certify completeness, legal compliance, or eligibility for registration.
 
 ## Optional stack choices
 
-Choose the stack after scope is understood; Rust is preferred when suitable. Document
-tradeoffs and real verification commands. Add ordinary CI once there is code to check.
+Choose platforms and the stack after scope is understood. Web-native applications,
+including web-only software, are fully valid choices and do not need native clients.
+Rust is preferred when suitable, not mandatory, including for web projects; choosing
+another language or a web-only platform does not require a policy exception.
+Linux-first and Android-first priorities apply only when building desktop and mobile
+clients respectively. Document tradeoffs and real verification commands.
+Add ordinary CI once there is code to check.
 Do not add cloud model execution. Keep server components FOSS and self-hostable.
 
 Preserve supply-chain conventions in selected stacks:
