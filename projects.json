@@ -26,13 +26,13 @@
     {
       "id": "librequilt",
       "name": "librequilt",
-      "summary": "Research into quilt design software: block drawing, quilt layout, and yardage and cutting charts.",
+      "summary": "Browser-based quilt design software in active development: block drawing, quilt layout, and yardage and cutting charts.",
       "repository": "https://github.com/508-dev/librequilt",
-      "status": "research",
+      "status": "implementation",
       "license": "AGPL-3.0-or-later",
       "maintainer": "caleb@508.dev",
       "nominationUrl": "https://github.com/508-dev/genairosity/issues/71",
-      "updated": "2026-10-13"
+      "updated": "2026-11-19"
     }
   ]
 }
